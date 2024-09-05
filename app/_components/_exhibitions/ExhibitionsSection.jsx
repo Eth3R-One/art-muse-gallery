@@ -30,7 +30,7 @@ const ExhibitionsSection = async () => {
 								className="px-2 md:px-4 md:basis-1/2 lg:basis-1/6 cursor-pointer flex flex-col justify-center "
 								title={exhibition?.title}
 							>
-								<div className="border border-[#1f1b02] rounded-lg flex flex-col justify-between hover:scale-110">
+								<div className="rounded-lg flex flex-col justify-between hover:scale-110">
 									<Card className="relative rounded-lg">
 										<CardContent className="relative aspect-square overflow-hidden">
 											<Image
