@@ -7,6 +7,10 @@ const nextConfig = {
 				protocol: "https",
 				hostname: "artic-web.imgix.net",
 			},
+			{
+				protocol: "https",
+				hostname: "www.artic.edu",
+			},
 		],
 	},
 };
