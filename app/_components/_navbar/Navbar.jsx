@@ -17,7 +17,7 @@ const MuseoModerno_Font = MuseoModerno({
 
 const Navbar = () => {
 	return (
-		<div className="flex items-center justify-between px-10 py-2 bg-[#EBE9CF]">
+		<div className="flex items-center justify-between px-10 py-2 bg-[#EBE9CF] rounded-2xl rounded-t border border-[#3B3A31]">
 			<Link href="/" className="flex items-center gap-2" prefetch={false}>
 				<Image
 					className="h-10 w-10 border rounded-full bg-current"
