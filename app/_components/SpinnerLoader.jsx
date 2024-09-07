@@ -1,6 +1,6 @@
 const SpinnerLoader = () => {
 	return (
-		<div className="flex flex-col items-center justify-center h-32 w-32">
+		<div className="flex flex-col items-center justify-center h-full w-full p-10">
 			<div
 				className="inline-block h-16 w-16 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
 				role="status"
