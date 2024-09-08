@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/_navbar/Navbar";
 import Footer from "./_components/_footer/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
 			<body className={`${inter.className} ` + "bg-[#EFEDE0]"}>
 				<Navbar />
 				{children}
+				<Toaster />
 				<Footer />
 			</body>
 		</html>
