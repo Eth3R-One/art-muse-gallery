@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import NoImage from "../../../public/images/no_photo.png";
 import { formatDate } from "@/utils/dateFormat";
+import Link from "next/link";
 
 const ExhibitionsSection = async () => {
 	const exhibitions = await getExhibitions();
@@ -19,7 +20,9 @@ const ExhibitionsSection = async () => {
 				<p className=" text-3xl font-mono lg:text-6xl text-[#3B3A31] uppercase">
 					Exhibitions
 				</p>
-				<p className="underline font-thin text-xl">See all Exhibitions</p>
+				<Link href="/exhibitions" className="underline font-thin text-xl">
+					See all Exhibitions
+				</Link>
 			</div>
 			<div className="flex flex-col pt-5">
 				<Carousel className="-ml-1">
