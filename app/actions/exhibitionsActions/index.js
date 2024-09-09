@@ -32,10 +32,15 @@ export const getExhibitionImagesById = async (exhibition) => {
 		// );
 
 		// const exhibition = await response.json();
-		if (exhibition?.image_id) {
-			return [exhibition?.image_id, ...exhibition?.alt_image_ids];
+
+		if (exhibition) {
+			if (exhibition?.image_id) {
+				return [exhibition?.image_id, ...exhibition?.alt_image_ids];
+			} else {
+				return [...exhibition?.alt_image_ids];
+			}
 		} else {
-			return [...exhibition?.alt_image_ids];
+			return [];
 		}
 	} catch (err) {
 		console.log(err);
