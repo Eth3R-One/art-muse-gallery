@@ -1,3 +1,5 @@
 export const joinImageUrl = (id) => {
-	return `${process.env.IMAGE_BASE_URL}/${id}/${process.env.IMAGE_REST_URL}`;
+	const baseUrl = "https://www.artic.edu/iiif/2";
+	const restUrl = "full/843,/0/default.jpg";
+	return `${baseUrl}/${id}/${restUrl}`;
 };
