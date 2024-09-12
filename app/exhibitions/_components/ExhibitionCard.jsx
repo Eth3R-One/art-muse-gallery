@@ -36,7 +36,7 @@ const ExhibitionCard = ({ exhibition }) => {
 					</p>
 				</div>
 				<span className="px-3 text-wrap">
-					<p
+					<div
 						className="px-5 text-center"
 						dangerouslySetInnerHTML={{ __html: short_description }}
 					/>

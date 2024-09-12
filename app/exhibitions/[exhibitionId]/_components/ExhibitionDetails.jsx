@@ -1,10 +1,10 @@
 import Image from "next/image";
-import { Container } from "./Container";
-import { FadeIn } from "./FadeIn";
+import { Container } from "../../../../components/ui/Container";
+import { FadeIn } from "../../../../components/ui/FadeIn";
 import NoPhoto from "../../../../public/images/no_photo.png";
 import { formatDate } from "@/utils/dateFormat";
-import ZoomableImage from "./Zoomable-image";
-import ImageSlider from "./ImageSlider";
+import ZoomableImage from "../../../../components/ui/Zoomable-image";
+import ImageSlider from "../../../../components/ui/ImageSlider";
 import Link from "next/link";
 
 const ExhibitionDetails = ({ exhibition, exhibitionImages }) => {
@@ -61,7 +61,7 @@ const ExhibitionDetails = ({ exhibition, exhibitionImages }) => {
 				<div className="flex flex-col items-center px-10 mx-10 gap-10">
 					{exhibitionImages?.length > 0 ? (
 						<section className="px-10 mb-20 mx-10">
-							<ImageSlider exhibitionImages={exhibitionImages} />
+							<ImageSlider imagesArray={exhibitionImages} />
 						</section>
 					) : (
 						<section className="mb-20 mx-10 flex text-center text-nowrap border border-rose-300 px-20 py-10 rounded-lg">
