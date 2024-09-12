@@ -25,7 +25,7 @@ export const getExhibitionById = async (exhibitionId) => {
 	}
 };
 
-export const getExhibitionImagesById = async (exhibition) => {
+export const getExhibitionImages = async (exhibition) => {
 	try {
 		// const response = await fetch(
 		// 	`${process.env.API_BASE_URL}/exhibitions/${exhibitionId}?fields=id,title,image_id,alt_image_ids`
