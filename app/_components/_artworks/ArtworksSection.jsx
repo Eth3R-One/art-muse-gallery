@@ -34,40 +34,42 @@ const ArtworksSection = async () => {
 								title={`${artwork?.title}: ${artwork?.thumbnail?.alt_text}`}
 							>
 								<div className="rounded-lg flex flex-col justify-between hover:scale-110">
-									<Card className="relative rounded-lg">
-										<CardContent className="relative aspect-square overflow-hidden">
-											<Image
-												src={
-													`${process.env.IMAGE_BASE_URL}/${artwork?.image_id}/${process.env.IMAGE_REST_URL}` ??
-													NoImage
-												}
-												alt={
-													artwork?.thumbnail?.alt_text ??
-													artwork?.title
-												}
-												placeholder="blur"
-												blurDataURL={artwork?.thumbnail?.lqip}
-												layout="fill"
-												objectFit="cover"
-												className="rounded-lg"
-												sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-											/>
-											<div className="absolute bottom-2 right-2 bg-rose-100 bg-opacity-60 text-rose-600 text-xs px-2 py-1 rounded">
-												<p>{artwork?.place_of_origin}</p>
-											</div>
-										</CardContent>
-										<div className="border bg-[#EFEDE0] flex flex-col justify-between">
-											<p className="text-xl font-mono px-5">
-												{artwork?.title}
-											</p>
-
-											{artwork?.fiscal_year && (
-												<p className="text-sm font-sans px-5">
-													({artwork?.fiscal_year})
+									<Link href={`/artworks/${artwork?.id}`}>
+										<Card className="relative rounded-lg">
+											<CardContent className="relative aspect-square overflow-hidden">
+												<Image
+													src={
+														`${process.env.IMAGE_BASE_URL}/${artwork?.image_id}/${process.env.IMAGE_REST_URL}` ??
+														NoImage
+													}
+													alt={
+														artwork?.thumbnail?.alt_text ??
+														artwork?.title
+													}
+													placeholder="blur"
+													blurDataURL={artwork?.thumbnail?.lqip}
+													layout="fill"
+													objectFit="cover"
+													className="rounded-lg"
+													sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+												/>
+												<div className="absolute bottom-2 right-2 bg-rose-100 bg-opacity-60 text-rose-600 text-xs px-2 py-1 rounded">
+													<p>{artwork?.place_of_origin}</p>
+												</div>
+											</CardContent>
+											<div className="border bg-[#EFEDE0] flex flex-col justify-between">
+												<p className="text-xl font-mono px-5">
+													{artwork?.title}
 												</p>
-											)}
-										</div>
-									</Card>
+
+												{artwork?.fiscal_year && (
+													<p className="text-sm font-sans px-5">
+														({artwork?.fiscal_year})
+													</p>
+												)}
+											</div>
+										</Card>
+									</Link>
 								</div>
 							</CarouselItem>
 						))}
