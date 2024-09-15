@@ -9,7 +9,7 @@ export async function generateMetadata({ params: { exhibitionId } }) {
 	const exhibition = await getExhibitionById(exhibitionId);
 	return {
 		title: `${
-			exhibition?.title ? exhibition?.title : "NO TITLE"
+			exhibition?.title ? exhibition?.title : "Not Found"
 		} | Art Muse Gallery`,
 		description:
 			exhibition?.description ??

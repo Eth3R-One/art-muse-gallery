@@ -6,7 +6,7 @@ export async function generateMetadata({ params: { artworkId } }) {
 	const artwork = await getArtworkById(artworkId);
 	return {
 		title: `${
-			artwork?.title ? artwork?.title : "NO TITLE"
+			artwork?.title ? artwork?.title : "Not Found"
 		} | Art Muse Gallery`,
 		description:
 			artwork?.description ?? artwork?.short_description ?? artwork?.title,
