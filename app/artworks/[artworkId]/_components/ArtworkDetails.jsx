@@ -1,5 +1,12 @@
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/ui/FadeIn";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
+
 import ZoomableImage from "@/components/ui/Zoomable-image";
 import Link from "next/link";
 import NoPhoto from "@/public/images/no_photo.png";
@@ -92,15 +99,18 @@ const ArtworkDetails = ({ artwork, artworkImages }) => {
 					</div>
 
 					{/* Publication and Exhibition History Section */}
-					<HistorySection
+					<AddAccordion
+						value="item 1"
 						title="Publication History"
 						content={artwork?.publication_history}
 					/>
-					<HistorySection
+					<AddAccordion
+						value="item 2"
 						title="Exhibition History"
 						content={artwork?.exhibition_history}
 					/>
-					<HistorySection
+					<AddAccordion
+						value="item 3"
 						title="Provenance"
 						content={artwork?.provenance_text}
 					/>
@@ -156,12 +166,27 @@ const ArtworkInfo = ({ label, value }) => (
 	</p>
 );
 
+const AddAccordion = ({ value, title, content }) => (
+	<Accordion
+		type="single"
+		collapsible
+		className="w-full max-w-3xl border border-slate-300 rounded-lg py-6 my-8 px-6 mx-auto"
+	>
+		<AccordionItem value={value}>
+			<AccordionTrigger className="font-mono text-3xl text-center uppercase">
+				{title}
+			</AccordionTrigger>
+			<AccordionContent>
+				<HistorySection content={content} />
+			</AccordionContent>
+		</AccordionItem>
+	</Accordion>
+);
 // Helper component for History sections
-const HistorySection = ({ title, content }) => (
-	<div className="w-full max-w-3xl border border-slate-300 rounded-lg py-6 my-8 px-6 mx-auto">
-		<h1 className="font-mono text-3xl text-center uppercase">{title}</h1>
+const HistorySection = ({ content }) => (
+	<div className="w-full">
 		<article
-			className="mt-4 text-lg mx-4"
+			className="mt-4 text-lg mx-4 text-wrap"
 			dangerouslySetInnerHTML={{
 				__html:
 					content?.replace(/\n/g, "<br />") || "No history available.",
